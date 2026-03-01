@@ -193,9 +193,9 @@ main {
     letter-spacing: -0.67px;
 }
 
-#reset-btn:disabled {
-    background-color: var(--green-750);
-    color: var(--green-800);
+#reset-btn {
+    background-color: var(--green-400);
+    color: var(--green-900);
     font-size: 20px;
     line-height: 30px;
     font-weight: inherit;
@@ -205,4 +205,14 @@ main {
     height: var(--spacing-600);
     box-sizing: border-box;
     padding: var(--spacing-100) var(--spacing-400);
+}
+
+#reset-btn:disabled {
+    background-color: var(--green-750);
+    color: var(--green-800);
+}
+
+#reset-btn:not(:disabled):hover {
+    background-color: var(--green-200);
+    cursor: pointer;
 }
