@@ -286,3 +286,34 @@ main {
         padding: var(--spacing-600);
     }
 }
+
+/* Desktop Responsive Styles */
+@media screen and (min-width: 769px) {
+    body {
+        padding: var(--spacing-600) var(--spacing-600) var(--spacing-1600);
+        gap: var(--spacing-1000);
+        justify-content: center;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    main {
+        max-width: 920px;
+        padding: var(--spacing-400);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--spacing-600);
+    }
+
+    #tip-form {
+        padding: var(--spacing-200) 0;
+        gap: var(--spacing-500);
+    }
+
+    #results-card {
+        padding: var(--spacing-500);
+        justify-content: space-between;
+    }
+}
