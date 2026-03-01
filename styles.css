@@ -18,6 +18,7 @@
     --spacing-200: 16px;
     --spacing-300: 24px;
     --spacing-400: 32px;
+    --spacing-500: 40px;
     --spacing-600: 48px;
     --spacing-1000: 80px;
     --spacing-1200: 96px;
@@ -33,6 +34,7 @@ body {
     background-color: var(--grey-200);
     margin: 0;
     min-height: 100vh;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +139,7 @@ main {
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    padding: 0 var(--spacing-200);
+    padding: 0 var(--spacing-100);
     font-size: inherit;
     font-weight: inherit;
     font-family: inherit;
@@ -193,6 +195,13 @@ main {
     margin: 0;
 }
 
+.result-row div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .label-text {
     color: white;
     font-size: 16px;
@@ -234,4 +243,46 @@ main {
 #reset-btn:not(:disabled):hover {
     background-color: var(--green-200);
     cursor: pointer;
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 376px) {
+    body {
+        padding: 0 var(--spacing-300) var(--spacing-400);
+    }
+
+    main {
+        border-radius: 25px;
+        flex-grow: 0;
+        max-width: 608px;
+        gap: var(--spacing-500);
+    }
+
+    #tip-form {
+        gap: var(--spacing-300);
+    }
+
+    #tip-options {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #results-card {
+        gap: var(--spacing-200);
+    }
+
+    .result-row > p {
+        font-size: 48px;
+        line-height: 71px;
+        letter-spacing: -1px;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    main {
+        padding: var(--spacing-600) var(--spacing-1000);
+    }
+
+    #results-card {
+        padding: var(--spacing-600);
+    }
 }
