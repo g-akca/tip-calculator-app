@@ -140,6 +140,17 @@ main {
     color: white;
 }
 
+#tip-options button:hover {
+    background-color: var(--green-200);
+    color: var(--green-900);
+    cursor: pointer;
+}
+
+#tip-options button.selected {
+    background-color: var(--green-400);
+    color: var(--green-900);
+}
+
 #tip-options input {
     background-color: var(--grey-50);
     text-align: center;
