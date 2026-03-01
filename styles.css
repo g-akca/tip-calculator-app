@@ -102,9 +102,17 @@ main {
     color: var(--green-900);
 }
 
+.input-wrapper input:focus {
+    outline: var(--green-400) 2px solid;
+}
+
 .input-wrapper input::placeholder {
     opacity: 35%;
     color: var(--green-900);
+}
+
+.input-wrapper input.error {
+    outline: var(--orange-400) 2px solid;
 }
 
 #tip-fieldset {
