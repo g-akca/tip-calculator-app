@@ -1,5 +1,6 @@
 const inputs = document.querySelectorAll(".input-wrapper input");
 const tipButtons = document.querySelectorAll("#tip-options button");
+const tipInput = document.querySelector("#tip-options input");
 const bill = document.getElementById("bill");
 const peopleAmount = document.getElementById("people");
 const tipAmount = document.getElementById("tip-amount");
@@ -22,6 +23,7 @@ function calculateResults() {
 function resetInputs() {
     inputs.forEach(inputEl => inputEl.value = "");
     tipButtons.forEach(btn => btn.classList.remove("selected"));
+    tipInput.value = "";
 }
 
 function resetResults() {
@@ -40,12 +42,21 @@ tipButtons.forEach(tipBtn => {
         }
         else {
             tipButtons.forEach(btn => btn.classList.remove("selected"));
+            tipInput.value = "";
             tipBtn.classList.add("selected");
             tipPercentage = tipBtn.value / 100;
         }
 
         calculateResults();
     })
+});
+
+tipInput.addEventListener("change", () => {
+    if (tipInput.value != 0) {
+        tipButtons.forEach(btn => btn.classList.remove("selected"));
+        tipPercentage = tipInput.value / 100;
+        calculateResults();
+    }
 });
 
 resetBtn.addEventListener("click", () => {
