@@ -68,12 +68,22 @@ main {
     gap: var(--spacing-400);
 }
 
-.form-input label, #tip-fieldset legend {
-    display: block;
-    color: var(--grey-500);
+.label-row {
+    display: flex;
+    justify-content: space-between;
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 var(--spacing-100);
+}
+
+.label-row label {
+    color: var(--grey-500);
+    margin: 0;
+}
+
+.error-msg {
+    color: var(--orange-400);
+    margin: 0;
 }
 
 .input-wrapper {
@@ -125,6 +135,11 @@ main {
 
 #tip-fieldset legend {
     padding: 0;
+    display: block;
+    color: var(--grey-500);
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 var(--spacing-100);
 }
 
 #tip-options {

@@ -8,11 +8,11 @@ const total = document.getElementById("total");
 const resetBtn = document.getElementById("reset-btn");
 
 function calculateResults() {
-    if (tipPercentage != 0 && bill.value != 0 && peopleAmount.value != 0) {
+    if (bill.value > 0 && peopleAmount.value > 0) {
         const tipPerPerson = bill.value * tipPercentage / peopleAmount.value;
         const totalPerPerson = tipPerPerson + (bill.value / peopleAmount.value);
-        tipAmount.innerText = `$${Math.round(tipPerPerson * 100) / 100}`;
-        total.innerText = `$${Math.round(totalPerPerson * 100) / 100}`;
+        tipAmount.innerText = `$${tipPerPerson.toFixed(2)}`;
+        total.innerText = `$${totalPerPerson.toFixed(2)}`;
         resetBtn.disabled = false;
     }
     else {
@@ -32,7 +32,23 @@ function resetResults() {
     resetBtn.disabled = true;
 }
 
-inputs.forEach(inputEl => inputEl.addEventListener("change", calculateResults));
+inputs.forEach(inputEl => {
+    inputEl.addEventListener("input", () => {
+        const formInput = inputEl.closest(".form-input");
+        const errorMsg = formInput.querySelector(".error-msg");
+
+        if (inputEl.value == "0") {
+            inputEl.classList.add("error");
+            errorMsg.hidden = false;
+        }
+        else {
+            inputEl.classList.remove("error");
+            errorMsg.hidden = true;
+        }
+
+        calculateResults();
+    });
+});
 
 tipButtons.forEach(tipBtn => {
     tipBtn.addEventListener("click", () => {
@@ -51,12 +67,16 @@ tipButtons.forEach(tipBtn => {
     })
 });
 
-tipInput.addEventListener("change", () => {
-    if (tipInput.value != 0) {
+tipInput.addEventListener("input", () => {
+    if (tipInput.value != "") {
         tipButtons.forEach(btn => btn.classList.remove("selected"));
         tipPercentage = tipInput.value / 100;
-        calculateResults();
     }
+    else {
+        tipPercentage = 0;
+    }
+    
+    calculateResults();
 });
 
 resetBtn.addEventListener("click", () => {
