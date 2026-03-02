@@ -22,8 +22,6 @@
     --spacing-600: 48px;
     --spacing-800: 64px;
     --spacing-1000: 80px;
-    --spacing-1200: 96px;
-    --spacing-1500: 120px;
     --spacing-1600: 128px;
 }
 
@@ -163,6 +161,7 @@ main {
 #tip-options button {
     background-color: var(--green-900);
     color: white;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #tip-options button:hover {
@@ -248,6 +247,7 @@ main {
     height: var(--spacing-600);
     box-sizing: border-box;
     padding: var(--spacing-100) var(--spacing-400);
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #reset-btn:disabled {
