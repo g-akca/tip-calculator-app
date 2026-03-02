@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Tip Calculator App</title>
   </head>
   <body>
@@ -28,11 +29,11 @@
         <fieldset id="tip-fieldset">
           <legend>Select Tip %</legend>
           <div id="tip-options">
-            <button type="button">5%</button>
-            <button type="button">10%</button>
-            <button type="button">15%</button>
-            <button type="button">25%</button>
-            <button type="button">50%</button>
+            <button type="button" value="5">5%</button>
+            <button type="button" value="10">10%</button>
+            <button type="button" value="15">15%</button>
+            <button type="button" value="25">25%</button>
+            <button type="button" value="50">50%</button>
             <input type="number" placeholder="Custom">
           </div>
         </fieldset>
@@ -55,7 +56,7 @@
               <p class="label-text">Tip Amount</p>
               <p class="person-text">/ person</p>
             </div>
-            <p>$0.00</p>
+            <p id="tip-amount">$0.00</p>
           </div>
           
           <div class="result-row">
@@ -63,7 +64,7 @@
               <p class="label-text">Total</p>
               <p class="person-text">/ person</p>
             </div>
-            <p>$0.00</p>
+            <p id="total">$0.00</p>
           </div>
         </div>
 
