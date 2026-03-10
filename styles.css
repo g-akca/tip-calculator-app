@@ -261,16 +261,17 @@ main {
 }
 
 /* Tablet Responsive Styles */
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 768px) {
     body {
-        padding: 0 var(--spacing-300) var(--spacing-400);
+        padding: 0 var(--spacing-1000) var(--spacing-400);
     }
 
     main {
         border-radius: 25px;
         flex-grow: 0;
-        max-width: 608px;
+        max-width: 820px;
         gap: var(--spacing-500);
+        padding: var(--spacing-600) var(--spacing-1000);
     }
 
     #tip-form {
@@ -283,6 +284,7 @@ main {
 
     #results-card {
         gap: var(--spacing-200);
+        padding: var(--spacing-600);
     }
 
     .result-row > p {
@@ -292,20 +294,10 @@ main {
     }
 }
 
-@media screen and (min-width: 580px) {
-    main {
-        padding: var(--spacing-600) var(--spacing-1000);
-    }
-
-    #results-card {
-        padding: var(--spacing-600);
-    }
-}
-
 /* Desktop Responsive Styles */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1440px) {
     body {
-        padding: var(--spacing-600) var(--spacing-600) var(--spacing-1600);
+        padding: var(--spacing-600) var(--spacing-1000) var(--spacing-1600);
         gap: var(--spacing-800);
         justify-content: center;
     }
